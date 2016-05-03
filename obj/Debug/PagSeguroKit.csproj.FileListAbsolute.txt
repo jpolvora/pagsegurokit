@@ -35,3 +35,5 @@ D:\Drives\MEGA\GIT\2016_projects\ClassPanel\PagSeguroKit\bin\Debug\ServiceStack.
 D:\Drives\MEGA\GIT\2016_projects\ClassPanel\PagSeguroKit\obj\Debug\PagSeguroKit.csprojResolveAssemblyReference.cache
 D:\Drives\MEGA\GIT\2016_projects\ClassPanel\PagSeguroKit\obj\Debug\PagSeguroKit.dll
 D:\Drives\MEGA\GIT\2016_projects\ClassPanel\PagSeguroKit\obj\Debug\PagSeguroKit.pdb
+D:\Drives\MEGA\GIT\2016_projects\PagSeguroKit\bin\Debug\PagSeguroKit.dll
+D:\Drives\MEGA\GIT\2016_projects\PagSeguroKit\bin\Debug\PagSeguroKit.pdb

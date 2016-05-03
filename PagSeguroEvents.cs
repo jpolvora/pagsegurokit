@@ -11,14 +11,22 @@ namespace PagSeguroKit
         
         internal static void InvokeNotificationReceived(PagSeguroNotificationEventArgs args)
         {
-            Delegate[] subscribers = NotificationReceived?.GetInvocationList() ?? new Delegate[0];
-            Execute(subscribers, args);
+            var @event = NotificationReceived;
+            if (@event != null)
+            {
+                Delegate[] subscribers = @event.GetInvocationList();
+                Execute(subscribers, args);
+            }
         }
 
         internal static void InvokeTransactionReceived(PagSeguroTransactionEventArgs args)
         {
-            Delegate[] subscribers = TransactionReceived?.GetInvocationList() ?? new Delegate[0];
-            Execute(subscribers, args);
+            var @event = NotificationReceived;
+            if (@event != null)
+            {
+                Delegate[] subscribers = @event.GetInvocationList();
+                Execute(subscribers, args);
+            }
         }
 
         /// <summary>
