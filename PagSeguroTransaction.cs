@@ -2,7 +2,7 @@ namespace PagSeguroKit
 {
     public class PagSeguroTransaction
     {
-        public string TransacationCode { get; set; }
+        public string TransactionCode { get; set; }
         public string Reference { get; set; }
         public PagSeguroTransactionStatus Status { get; set; }
         public string Street { get; set; }

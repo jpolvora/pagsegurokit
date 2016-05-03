@@ -8,7 +8,7 @@ namespace PagSeguroKit
     {
         public static event EventHandler<PagSeguroTransactionEventArgs> TransactionReceived;
         public static event EventHandler<PagSeguroNotificationEventArgs> NotificationReceived;
-        
+
         internal static void InvokeNotificationReceived(PagSeguroNotificationEventArgs args)
         {
             var @event = NotificationReceived;
@@ -21,7 +21,7 @@ namespace PagSeguroKit
 
         internal static void InvokeTransactionReceived(PagSeguroTransactionEventArgs args)
         {
-            var @event = NotificationReceived;
+            var @event = TransactionReceived;
             if (@event != null)
             {
                 Delegate[] subscribers = @event.GetInvocationList();
@@ -32,7 +32,7 @@ namespace PagSeguroKit
         /// <summary>
         /// Se invocar diretamente o evento, e um handler lançar exception, o httpHandler irá retornar erro 500
         /// </summary>
-        private static void Execute<TEventArgs>(IEnumerable<Delegate> subscribers, TEventArgs args) where TEventArgs: PagSeguroRetornoEventArgs
+        private static void Execute<TEventArgs>(IEnumerable<Delegate> subscribers, TEventArgs args) where TEventArgs : PagSeguroRetornoEventArgs
         {
             args.FeedBack("Invoking event handlers on thread {0}", Thread.CurrentThread.ManagedThreadId);
 

@@ -274,7 +274,7 @@ namespace PagSeguroKit
 
             var statusResult = new PagSeguroTransaction()
             {
-                TransacationCode = code,
+                TransactionCode = code,
                 Reference = reference,
                 Status = (PagSeguroTransactionStatus)status,
                 Street = street.Value,
