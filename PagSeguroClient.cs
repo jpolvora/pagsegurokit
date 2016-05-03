@@ -9,7 +9,6 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using ServiceStack.Text;
 
 namespace PagSeguroKit
 {
@@ -128,7 +127,7 @@ namespace PagSeguroKit
                     sb.AppendLine(str);
                     Trace.TraceError(str);
                 }
-                throw new PagSeguroException("Erro ao Consultar Transação: StatusCode: {0}, Erros: {1}".Fmt(response.StatusCode, sb), null);
+                throw new PagSeguroException(string.Format("Erro ao Consultar Transação: StatusCode: {0}, Erros: {1}", response.StatusCode, sb), null);
             }
         }
 
@@ -168,7 +167,7 @@ namespace PagSeguroKit
                     sb.AppendLine(str);
                     Trace.TraceError(str);
                 }
-                throw new PagSeguroException("Erro ao Consultar Notificação: StatusCode: {0}, erros: {1}".Fmt(response.StatusCode, sb), null);
+                throw new PagSeguroException(string.Format("Erro ao Consultar Notificação: StatusCode: {0}, erros: {1}", response.StatusCode, sb), null);
             }
         }
 
