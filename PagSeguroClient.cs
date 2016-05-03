@@ -13,6 +13,11 @@ using ServiceStack.Text;
 
 namespace PagSeguroKit
 {
+    public static class PagSeguro
+    {
+
+    }
+
     public class PagSeguroClient
     {
         private readonly string _ambiente;
@@ -64,14 +69,17 @@ namespace PagSeguroKit
 
                 var sb = new StringBuilder();
                 var errors = ParseError(result);
+
+                var checkoutError = new CheckoutResponse();
                 foreach (var erro in errors)
                 {
                     var str = string.Format("Erro Code {0}, Message: {1}", erro.Code, erro.Message);
+                    checkoutError.Errors.Add(new KeyValuePair<string, string>(erro.Code, erro.Message));
                     sb.AppendLine(str);
                     Trace.TraceError(str);
                 }
 
-                throw new PagSeguroException("Erros de validação no pagseguro: " + sb, null);
+                return checkoutError;
             }
         }
 
